@@ -1,10 +1,10 @@
-function makeGrid(){
+function makeGrid(size){
     const container = document.querySelector("#container");
-    for (let i = 0; i <= 5; i++){
+    for (let i = 0; i <= size; i++){
         var row = document.createElement("div");
         row.classList.add("row");
         container.appendChild(row);
-        for (let j = 0; j <=5; j++){
+        for (let j = 0; j <= size; j++){
             var column = document.createElement("div");
             column.classList.add("column");
             column.textContent = "Column";
@@ -13,4 +13,4 @@ function makeGrid(){
     }
 }
 
-makeGrid();
+makeGrid(10);

@@ -1,17 +1,32 @@
+.header {
+    padding: 60px;
+    text-align: center;
+    background: lightcoral;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
 .container {
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
+    
 }
 
 .row {
     display: flex;
-    gap: 10px;
-    margin: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+    justify-content: center;
 }
 
 .column {
     background-color: grey;
     padding: 5px;
-    flex: 1;
+    border: 1px solid red;
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    
 }

@@ -1,16 +1,18 @@
-function makeGrid(size){
+function createGrid(size) {
     const container = document.querySelector("#container");
-    for (let i = 0; i <= size; i++){
-        var row = document.createElement("div");
+    for (let i = 0; i <= size; i++) {
+        let row = document.createElement("div");
         row.classList.add("row");
         container.appendChild(row);
-        for (let j = 0; j <= size; j++){
-            var column = document.createElement("div");
+        for (let j = 0; j <= size; j++) {
+            let column = document.createElement("div");
             column.classList.add("column");
-            column.textContent = "Column";
             row.appendChild(column);
+            column.addEventListener("mouseover", function () {
+                column.style.backgroundColor = "black";
+            })
         }
     }
 }
 
-makeGrid(10);
+createGrid(16);

@@ -1,3 +1,4 @@
+const button = document.querySelector("#btn");
 function createGrid(size) {
     const container = document.querySelector("#container");
     for (let i = 0; i <= size; i++) {
@@ -13,6 +14,17 @@ function createGrid(size) {
             })
         }
     }
+
+}
+
+function deleteGrid() {
+    const columns = document.getElementsByClassName("column");
+    for (let i = columns.length - 1; i >= 0; i--) {
+        columns[i].style.backgroundColor = "white";
+    }
 }
 
 createGrid(16);
+button.addEventListener("click", function () {
+    deleteGrid();
+})

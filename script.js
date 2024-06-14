@@ -30,14 +30,18 @@ function deleteGrid() {
 
 chooseGridSize.addEventListener("click", function () {
     size = prompt("Enter new Grid size");
+    while (size > 100 || size < 1){
+        size = prompt("please enter a number number between 1-100");
+    }
     deleteGrid();
     createGrid(size);
 })
 
 createGrid(16);
 createGridButton.addEventListener("click", function () {
+    size = 16;
     deleteGrid();
-    createGrid(16);
+    createGrid(size);
 })
 
 resetCurrentGrid.addEventListener("click", function () {

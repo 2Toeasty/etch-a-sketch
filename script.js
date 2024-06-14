@@ -1,4 +1,6 @@
-const button = document.querySelector("#btn");
+const createGridButton = document.querySelector("#btn");
+const chooseGridSize = document.querySelector("#sizeChooser");
+const resetCurrentGrid = document.querySelector("#currentReset");
 function createGrid(size) {
     const container = document.querySelector("#container");
     for (let i = 0; i <= size; i++) {
@@ -17,14 +19,28 @@ function createGrid(size) {
 
 }
 
+var size = 16;
+
 function deleteGrid() {
-    const columns = document.getElementsByClassName("column");
-    for (let i = columns.length - 1; i >= 0; i--) {
-        columns[i].style.backgroundColor = "white";
+    const container = document.querySelector('#container');
+    while (container.firstChild) {
+        container.removeChild(container.lastChild);
     }
 }
 
-createGrid(16);
-button.addEventListener("click", function () {
+chooseGridSize.addEventListener("click", function () {
+    size = prompt("Enter new Grid size");
     deleteGrid();
+    createGrid(size);
+})
+
+createGrid(16);
+createGridButton.addEventListener("click", function () {
+    deleteGrid();
+    createGrid(16);
+})
+
+resetCurrentGrid.addEventListener("click", function () {
+    deleteGrid();
+    createGrid(size);
 })

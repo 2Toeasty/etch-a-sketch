@@ -41,7 +41,7 @@ createGrid(16);
 createGridButton.addEventListener("click", function () {
     size = 16;
     deleteGrid();
-    createGrid(size);
+    createGrid(16);
 })
 
 resetCurrentGrid.addEventListener("click", function () {
